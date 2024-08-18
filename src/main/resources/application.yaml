@@ -1,0 +1,12 @@
+server:
+ port: 8080
+# setting Database
+spring:
+   datasource:
+     url: jdbc:postgresql://localhost:5432/reto
+     username: postgres
+     password: Softtek.71
+   jpa:
+     hibernate:
+      ddl-auto: update 
+      show-sql: true 
