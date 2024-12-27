@@ -1,12 +1,14 @@
 server:
  port: 8080
-# setting Database
+# setting Database spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
 spring:
-   datasource:
-     url: jdbc:postgresql://localhost:5432/reto
-     username: postgres
-     password: Softtek.71
-   jpa:
-     hibernate:
-      ddl-auto: update 
-      show-sql: true 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reto
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+

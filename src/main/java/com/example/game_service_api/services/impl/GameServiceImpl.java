@@ -26,4 +26,10 @@ private final GameRepository gameRepository;
 		Optional<Game> respGame = gameRepository.findById(Long.parseLong(idGame));
 	    return respGame;
 	}
+
+	@Override
+	public String deleteGame(String id) {
+		gameRepository.deleteById(Long.parseLong(id));
+		return "Eliminado/transaccion completa";
+	}
 }
