@@ -20,6 +20,8 @@ private final GameRepository gameRepository;
 	public Game saveGame(Game gameRequest) {
 		return gameRepository.save(gameRequest);
 	}
+
+
 	
 	public Optional<Game> getGame(String idGame) {
 		

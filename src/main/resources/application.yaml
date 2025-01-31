@@ -1,6 +1,14 @@
 server:
- port: 8080
+ port: 8090
 # setting Database spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+#Spring Boot Actuator expondrá solo un conjunto limitado de endpoints de
+#forma predeterminada [/actuator/health, /actuator/info]
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 spring:
   datasource:

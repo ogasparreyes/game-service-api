@@ -1,6 +1,7 @@
 package com.example.game_service_api.entities;
 
 import java.io.Serializable;
+import java.lang.module.Configuration;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.Entity;
@@ -43,3 +44,14 @@ public class Game implements Serializable{
 	}
 
 }
+
+// S.O.L.I.D
+// S: responsabilidad de responsabilidad
+// O: Open/close
+//L Substitucion de liskov
+// I: Segregacion de interfaz (roles interfaz)
+// Inyeccion de dependencia
+
+
+
+

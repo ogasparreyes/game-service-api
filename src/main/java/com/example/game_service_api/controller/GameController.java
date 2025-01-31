@@ -1,12 +1,14 @@
 package com.example.game_service_api.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
 import com.example.game_service_api.entities.Game;
 import com.example.game_service_api.services.GameService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 @RestController
@@ -15,6 +17,7 @@ public class GameController {
 
     private final GameService gameService;
 
+    private List<String> games = Arrays.asList("Halo 1", "Call Of Dutty", "NFS", "FIFA 25");
 
     public GameController(GameService gameService) {
         this.gameService = gameService;
@@ -32,6 +35,12 @@ public class GameController {
     @GetMapping("/{idGame}")
     public ResponseEntity<Game> getGame(@PathVariable String idGame) {
         return ResponseEntity.ok(gameService.getGame(idGame).get());
+    }
+
+    @GetMapping("/game/{nameGame}")
+    public ResponseEntity<String> getGameByName(@PathVariable String nameGame) {
+
+        return ResponseEntity.ok(games.stream().filter(g -> g.equals(nameGame)).findAny().orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT)));
     }
 
     @DeleteMapping("/{idGame}")
