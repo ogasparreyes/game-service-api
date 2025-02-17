@@ -8,6 +8,8 @@ http://localhost:8090/actuator/metrics/http.server.requests
 
 ## ver containers running dockers
 * `docker ps`
+## Construir imagen
+* `docker build -t "spring-img-game-service" .`
 
 ## Accessing Redis CLI
 * `docker exec -it my-redis redis-cli`

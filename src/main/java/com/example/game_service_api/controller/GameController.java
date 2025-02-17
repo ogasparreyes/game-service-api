@@ -87,7 +87,7 @@ public class GameController {
     }
 
     // Limpiar la cache @CacheEvict("cache_games") example un deleteByID ...
-    @Cacheable("cache_games")
+   // @Cacheable("cache_games")
     @GetMapping("/game/{nameGame}")
     public ResponseEntity<String> getGameByName(@PathVariable String nameGame) {
         meterRegistry.counter("request.game.name").increment();
